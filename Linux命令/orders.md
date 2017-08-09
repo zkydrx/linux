@@ -260,8 +260,6 @@ W          写         数值表示为2
 
 X           可执行  数值表示为1
 
-![img](D:/file/youdao/zkydrx@163.com%281%29/1b3c13cf92684d06bd3a962da71705f3/549405142313.png)
-
 如图所示，jdk-7u21-linux-i586.tar.gz文件的权限为-rw-rw-r--
 
 -rw-rw-r--一共十个字符，分成四段。
@@ -289,5 +287,6 @@ sudo chmod u+x g+w o+r  filename
 sudo chmod 765 filename
 
 ps -ef|grep id （查看子进程的父进程，适用于子进程杀不掉的情况下，可以通过该命令查找其父进程，杀掉父进程那么子进程将随之被杀掉）
+
 
 
