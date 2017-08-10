@@ -85,6 +85,7 @@ mysql: /usr/bin/mysql /usr/include/mysql /usr/share/mysql /usr/share/man/man1/my
 [root@DB-Server init.d]# 
 [root@DB-Server init.d]# rpm -ev MySQL-devel-5.6.23-1.linux_glibc2.5
 [root@DB-Server init.d]# rpm -ev MySQL-server-5.6.23-1.linux_glibc2.5
+[root@DB-Server init.d]# rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除
 You have new mail in /var/spool/mail/root
 [root@DB-Server init.d]# rpm -ev MySQL-client-5.6.23-1.linux_glibc2.5
 [root@DB-Server init.d]#
