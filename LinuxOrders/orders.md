@@ -339,25 +339,42 @@ ps -ef|grep id （查看子进程的父进程，适用于子进程杀不掉的�
 
 
 在Centos中yum安装和卸载软件的使用方法
-在Centos中yum安装和卸载软件的使用方法
-安装方法
+--安装方法
+
 安装一个软件时
+
 yum -y install httpd
+
 安装多个相类似的软件时
+
 yum -y install httpd*
+
 安装多个非类似软件时
+
 yum -y install httpd php php-gd mysql
+
 卸载一个软件时
+
 yum -y remove httpd
+
 卸载多个相类似的软件时
+
 yum -y remove httpd*
+
 卸载多个非类似软件时
+
 yum -y remove httpd php php-gd mysql
 
 另外还有一个非常棒的用法
+
 假如我要执行iostat这个命令来查看CPU与存储设备状态，可是执行却发现没有这个命令
+
 于是执行yum install iostat，结果说找不到该软件，使用下面的办法可以解决
+
 yum search iostat就能查到和iostat相关的安装包了，
+
 另外想安装一个程序，只记得一部分名称，也可以用这个办法来实现安装
+
 yum search png |grep png
+
 就能找到我们想安装的libpng这个名称
