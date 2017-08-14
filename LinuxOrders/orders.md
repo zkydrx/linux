@@ -203,7 +203,7 @@ h(左移一个字符←)、j(下一行↓)、k(上一行↑)、l(右移一个字
 
 du -sh * 按文件的大小从小到大排序。效果如下图
  
- ![](https://github.com/zkydrx/blog/master/linux/6.jpg?raw=true)
+ ![](https://github.com/zkydrx/blog/master/linux/9.png?raw=true)
 
 用户及用户组管理
 
