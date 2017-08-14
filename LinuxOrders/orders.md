@@ -200,7 +200,10 @@ yyp                   复制光标所在行，并粘贴
 
 h(左移一个字符←)、j(下一行↓)、k(上一行↑)、l(右移一个字符→)
 
+
+du -sh * 按文件的大小从小到大排序。效果如下图
  
+ ![](https://github.com/zkydrx/blog/master/linux/6.jpg?raw=true)
 
 用户及用户组管理
 
