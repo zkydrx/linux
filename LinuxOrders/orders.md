@@ -207,19 +207,19 @@ vgdisplay (查看当前系统的硬盘使用情况，以及可分配的资源 fr
        - 第三步：检查目录连接性
        - 第四步：Checking reference counts
        - 第五步：检查簇概要信息
-4. 再次运行2的命令
-5. 挂载/home目录
-   - mount /home
-6. 查看分区情况
-   - df -h(这步主要是查看/home目录是否成功挂载上 ，并且容量减小到我们期望的数字)
-7. 查看可分配的容量
-   - vgdisplay(查看 free pe/size这里看看是否有可用的容量,如果前面不出问题，一般都是有的)
-8. 把这些容量分配给指定的块这里我们分配给/
-   - lvextend -L +500G /dev/mapper/vg_centos-lv_root
-9. 重置/块的容量
-   - resize2fs -p /dev/mapper/vg_centos-lv_root
-10.查看分区情况
-   - df -h(查看/块的容量是否成功的添加)
+4.  再次运行2的命令
+5.  挂载/home目录
+    - mount /home
+6.  查看分区情况
+    - df -h(这步主要是查看/home目录是否成功挂载上 ，并且容量减小到我们期望的数字)
+7.  查看可分配的容量
+    - vgdisplay(查看 free pe/size这里看看是否有可用的容量,如果前面不出问题，一般都是有的)
+8.  把这些容量分配给指定的块这里我们分配给/
+    - lvextend -L +500G /dev/mapper/vg_centos-lv_root
+9.  重置/块的容量
+    - resize2fs -p /dev/mapper/vg_centos-lv_root
+10. 查看分区情况
+    - df -h(查看/块的容量是否成功的添加)
 ---
 
 
