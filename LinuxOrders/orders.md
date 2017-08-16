@@ -24,9 +24,8 @@ mv               移动或重命名
 
 rm               删除文件
 
-​     -r            递归删除，可删除子目录及文件
-
-​     -f            强制删除
+	-r            递归删除，可删除子目录及文件
+	-f            强制删除
 
 find              在文件系统中搜索某文件
 
@@ -84,6 +83,13 @@ alias               对命令重命名 如：alias showmeit="ps -aux" ，另外�
 
 kill                 杀死进程，可以先用ps 或 top命令查看进程的id，然后再用kill命令杀死进程。
 
+find / -name name 全局查找name。
+
+ps -ef | grep name 查看以name名称的进程。
+
+yum list | grep name 查看该软件的安装源。
+
+yum -y install softWareName 安装软件
  
 
 打包压缩相关命令
