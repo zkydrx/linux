@@ -79,6 +79,8 @@ man                命令不会用了，找男人  如：man ls
 
 clear              清屏
 
+reset              清屏
+
 alias               对命令重命名 如：alias showmeit="ps -aux" ，另外解除使用unaliax showmeit
 
 kill                 杀死进程，可以先用ps 或 top命令查看进程的id，然后再用kill命令杀死进程。
