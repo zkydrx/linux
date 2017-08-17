@@ -93,6 +93,7 @@ yum list | grep name 查看该软件的安装源。
 
 yum -y install softWareName 安装软件
  
+yum install openssh-clients(安装scp)
 
 打包压缩相关命令
 
@@ -432,5 +433,78 @@ yum search png |grep png
 就能找到我们想安装的libpng这个名称
 
 
-
-
+---
+scp部分
+linux命令——scp 两台linux机器间文件或目录传输
+不同的Linux之间copy文件常用有3种方法：
+第一种：ftp，也就是其中一台Linux安装ftpServer，这样可以另外一台使用ftp的client程序来进行文件的copy。
+第二种：采用samba服务，类似Windows文件copy的方式来操作，比较简洁方便，
+第三种：利用scp命令来进行文件复制。
+介绍
+scp是secure copy的简写，是linux系统下基于ssh登陆进行安全的远程文件拷贝命令。linux的scp命令可以在linux服务器之间复制文件和目录。和它类似的命令有cp，不过cp只是在本机进行拷贝不能跨服务器。
+当你服务器硬盘变为只读 read only system时，用scp可以帮你把文件移出来。另外，scp还非常不占资源，不会提高多少系统负荷，在这一点上，rsync就远远不及它了。虽然 rsync比scp会快一点，但当小文件众多的情况下，rsync会导致硬盘I/O非常高，而scp基本不影响系统正常使用。
+说明：当两台LINUX主机之间要互传文件时可使用SCP命令来实现，建立信任关系之后可不输入密码。 
+ 
+命令格式：
+scp [参数] [原路径] [目标路径]
+scp 本地用户名 @IP 地址 : 文件名 1 远程用户名 @IP 地址 : 文件名 2
+ 
+命令参数：
+-1  强制scp命令使用协议ssh1  
+-2  强制scp命令使用协议ssh2  
+-4  强制scp命令只使用IPv4寻址  
+-6  强制scp命令只使用IPv6寻址  
+-B  使用批处理模式（传输过程中不询问传输口令或短语）  
+-C  允许压缩。（将-C标志传递给ssh，从而打开压缩功能）  
+-p 保留原文件的修改时间，访问时间和访问权限。  
+-q  不显示传输进度条。  
+-r  递归复制整个目录。  
+-v 详细方式显示输出。scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。   
+-c cipher  以cipher将数据传输进行加密，这个选项将直接传递给ssh。   
+-F ssh_config  指定一个替代的ssh配置文件，此参数直接传递给ssh。  
+-i identity_file  从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。    
+-l limit  限定用户所能使用的带宽，以Kbit/s为单位。     
+-o ssh_option  如果习惯于使用ssh_config(5)中的参数传递方式，   
+-P port  注意是大写的P, port是指定数据传输用到的端口号   
+-S program  指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。
+ 
+使用方法：
+1、将本地服务器的文件传送到远程服务器。
+命令格式：  
+scp local_file remote_username@remote_ip:remote_folder  
+或者  
+scp local_file remote_username@remote_ip:remote_file  
+或者  
+scp local_file remote_ip:remote_folder  
+或者  
+scp local_file remote_ip:remote_file  
+第1,2个指定了用户名，命令执行后需要输入用户密码，第1个仅指定了远程的目录，文件名字不变，第2个指定了文件名  
+第3,4个没有指定用户名，命令执行后需要输入用户名和密码，第3个仅指定了远程的目录，文件名字不变，第4个指定了文件名   
+ 
+2、将本地服务器的目录传送到远程服务器。
+命令格式：  
+scp -r local_folder remote_username@remote_ip:remote_folder  
+或者  
+scp -r local_folder remote_ip:remote_folder  
+第1个指定了用户名，命令执行后需要输入用户密码；  
+第2个没有指定用户名，命令执行后需要输入用户名和密码；
+ 
+3、从远程服务器的文件或目录拷贝到本地服务器。与从本地传送到远程服务器相类似，只是将参数位置互换一下。
+ 
+使用实例：
+1、从远程复制文件到本地目录。
+说明：从192.168.120.204机器上的/opt/soft/的目录中下载nginx-0.5.38.tar.gz 文件到本地/opt/soft/目录中
+$scp root@192.168.120.204:/opt/soft/nginx-0.5.38.tar.gz /opt/soft/
+ 
+2、从远程复制目录到本地目录。
+说明：从192.168.120.204机器上的/opt/soft/中下载mongodb 目录到本地的/opt/soft/目录来。
+$scp -r root@192.168.120.204:/opt/soft/mongodb /opt/soft/
+ 
+3、上传本地文件到远程目录。
+说明：复制本地opt/soft/目录下的文件nginx-0.5.38.tar.gz 到远程机器192.168.120.204的opt/soft/scptest目录
+$scp /opt/soft/nginx-0.5.38.tar.gz root@192.168.120.204:/opt/soft/scptest
+ 
+4、上传本地目录到远程目录。
+说明：上传本地目录 /opt/soft/mongodb到远程机器192.168.120.204上/opt/soft/scptest的目录中去
+$scp -r /opt/soft/mongodb root@192.168.120.204:/opt/soft/scptest
+---
