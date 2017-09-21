@@ -546,7 +546,7 @@ $scp /opt/soft/nginx-0.5.38.tar.gz root@192.168.120.204:/opt/soft/scptest
 说明：上传本地目录 /opt/soft/mongodb到远程机器192.168.120.204上/opt/soft/scptest的目录中去
 
 $scp -r /opt/soft/mongodb root@192.168.120.204:/opt/soft/scptest
----
+
 
 ## 查看远程的redis服务或者查看Java服务的命令：
  - ps -aux|grep redis(查看redis运行的服务)
