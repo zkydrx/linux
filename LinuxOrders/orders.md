@@ -547,3 +547,13 @@ $scp /opt/soft/nginx-0.5.38.tar.gz root@192.168.120.204:/opt/soft/scptest
 
 $scp -r /opt/soft/mongodb root@192.168.120.204:/opt/soft/scptest
 ---
+
+## 查看远程的redis服务或者查看Java服务的命令：
+ - ps -aux|grep redis(查看redis运行的服务)
+ - ps -ef|grep java(查看Java运行的服务)
+
+
+
+
+
+
